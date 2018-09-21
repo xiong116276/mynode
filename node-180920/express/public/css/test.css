@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 14px;
+  color: #333; }
+
+.login-form {
+  width: 250px;
+  height: 100px;
+  margin: 200px auto; }
+  .login-form .input-group {
+    margin-bottom: 20px;
+    text-align: center; }
+  .login-form .btn-login {
+    display: inline-block;
+    cursor: pointer; }
+    .login-form .btn-login:hover {
+      color: blue; }
+
+/*# sourceMappingURL=test.css.map */

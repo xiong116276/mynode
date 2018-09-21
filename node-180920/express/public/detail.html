@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+    <style>
+        table,tr,td{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table id="detail" border="1">
+        <tr>
+            <td>name</td>
+            <td>nickname</td>
+            <td>sex</td>
+            <td>tel</td>
+            <!--<td>operation</td>-->
+        </tr>
+    </table>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        var name = location.search.substring(1).split('=')[1];
+        $.ajax({
+            url:'http://127.0.0.1:3000/detail',
+            type:'get',
+            dataType:'json',
+            data:{'name':name},
+            success:function (res) {
+                $('#detail').append(`
+                    <tr class="detail">
+                        <td>${res[0].name}</td>
+                        <td>${res[0].nickname}</td>
+                        <td>${res[0].sex}</td>
+                        <td>${res[0].tel}</td>
+                        <!--<td><span>修改</span></td>-->
+                    </tr>
+                `);
+            },
+            error:function (err) {
+                console.log(err);
+            }
+        })
+    </script>
+</body>
+</html>
